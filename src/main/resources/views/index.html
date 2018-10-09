@@ -1,0 +1,18 @@
+<%
+    var hello = 'hello world !!';
+    var title = '标题';
+
+    var path = request.contextPath;
+    var base = request.scheme + "://" + request.serverName + ":" + request.serverPort + path + "/";
+%>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>${title}</title>
+</head>
+<body>
+<h1>${hello}</h1>
+<h1>${msg}</h1>
+<h1>${base}</h1>
+</body>
+</html>

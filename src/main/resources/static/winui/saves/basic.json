@@ -1,0 +1,174 @@
+{
+  "configs": {
+    "topTaskBar": false,
+    "sound": false,
+    "wallpaper": "../winui/res/img/wallpapers/bg1.jpg",
+    "wallpaperBlur": false,
+    "wallpaperSlide": false,
+    "wallpaperSlideRandom": true,
+    "wallpaperSlideItv": 1,
+    "wallpaperSlideTime": 1519442460788,
+    "wallpaperSlideIndex": 8,
+    "openMax": 9,
+    "idCounter": 148,
+    "themeColor": "rgba(24,28,71,1)",
+    "autoThemeColor": true,
+    "wallpapers": [
+      {
+        "image": "../winui/res/img/wallpapers/bg1.jpg",
+        "preview": "../winui/res/img/wallpapers/bg1_1.jpg"
+      },
+      {
+        "image": "../winui/res/img/wallpapers/bg2.jpg",
+        "preview": "../winui/res/img/wallpapers/bg2_1.jpg"
+      },
+      {
+        "image": "../winui/res/img/wallpapers/bg3.jpg",
+        "preview": "../winui/res/img/wallpapers/bg3_1.jpg"
+      },
+      {
+        "image": "../winui/res/img/wallpapers/bg4.jpg",
+        "preview": "../winui/res/img/wallpapers/bg4_1.jpg"
+      },
+      {
+        "image": "../winui/res/img/wallpapers/bg5.jpg",
+        "preview": "../winui/res/img/wallpapers/bg5_1.jpg"
+      },
+      {
+        "image": "../winui/res/img/wallpapers/bg6.jpg",
+        "preview": "../winui/res/img/wallpapers/bg6_1.jpg"
+      },
+      {
+        "image": "../winui/res/img/wallpapers/bg7.jpg",
+        "preview": "../winui/res/img/wallpapers/bg7_1.jpg"
+      },
+      {
+        "image": "../winui/res/img/wallpapers/bg8.jpg",
+        "preview": "../winui/res/img/wallpapers/bg8_1.jpg"
+      },
+      {
+        "image": "../winui/res/img/wallpapers/bg9.jpg",
+        "preview": "../winui/res/img/wallpapers/bg9_1.jpg"
+      },
+      {
+        "image": "../winui/res/img/wallpapers/bg10.jpg",
+        "preview": "../winui/res/img/wallpapers/bg10_1.jpg"
+      },
+      {
+        "image": "../winui/res/img/wallpapers/bg11.jpg",
+        "preview": "../winui/res/img/wallpapers/bg11_1.jpg"
+      },
+      {
+        "image": "../winui/res/img/wallpapers/bg12.jpg",
+        "preview": "../winui/res/img/wallpapers/bg12_1.jpg"
+      },
+      {
+        "image": "../winui/res/img/wallpapers/bg13.jpg",
+        "preview": "../winui/res/img/wallpapers/bg13_1.jpg"
+      },
+      {
+        "image": "../winui/res/img/wallpapers/bg14.jpg",
+        "preview": "../winui/res/img/wallpapers/bg14_1.jpg"
+      },
+      {
+        "image": "../winui/res/img/wallpapers/bg15.jpg",
+        "preview": "../winui/res/img/wallpapers/bg15_1.jpg"
+      }
+    ],
+    "pathRes": "../winui/res",
+    "shortcutsSortAuto": true,
+    "debug": false,
+    "winBlur": true
+  },
+  "apps": {
+    "yl-system": {
+      "icon": {
+        "type": "fa",
+        "bg": "#436fde",
+        "content": "gear"
+      },
+      "title": "系统设置",
+      "url": "../winui/res/apps/yl-system/index.html"
+    },
+    "yl-color-picker": {
+      "icon": {
+        "type": "fa",
+        "bg": "#3289c7",
+        "content": "eyedropper"
+      },
+      "title": "取色器",
+      "url": "../winui/res/apps/colorPicker/colorPicker.html"
+    },
+    "yl-browser": {
+      "addressBar": true,
+      "autoRun": 0,
+      "background": false,
+      "badge": 0,
+      "desc": "浏览器",
+      "icon": {
+        "type": "fa",
+        "content": "internet-explorer",
+        "bg": "#3a55c2"
+      },
+      "openMode": "normal",
+      "plugin": false,
+      "position": {
+        "autoOffset": true,
+        "left": true,
+        "top": true,
+        "x": "x*0.1",
+        "y": "y*0.1"
+      },
+      "version": "1.0.0",
+      "poweredBy": "Yuri2",
+      "resizable": true,
+      "single": false,
+      "size": {
+        "height": "y*0.8-80",
+        "width": "x*0.8"
+      },
+      "title": "浏览器",
+      "url": "../winui/res/apps/browser/index.html",
+      "customTile": "",
+      "urlRandomToken": true
+    },
+    "yl-app-store": {
+      "title": "应用商店",
+      "url": "https://appstore.levin.com",
+      "icon": {
+        "type": "fa",
+        "bg": "#436fde",
+        "content": "gear"
+      }
+    },
+    "yl-app-home": {
+      "title": "官网",
+      "url": "https://www.baidu.com",
+      "icon": {
+        "type": "fa",
+        "bg": "#436fde",
+        "content": "html5"
+      }
+    },
+    "yl-server": {
+      "title": "后台服务",
+      "url": "https://server.levin.com"
+    }
+  },
+  "shortcuts": [
+    {
+      "app": "yl-app-home",
+      "title": "官网",
+      "params": {},
+      "hash": ""
+    }
+  ],
+
+  "tiles": [
+
+  ],
+
+  "startMenu": {
+
+  }
+}

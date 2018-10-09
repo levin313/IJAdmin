@@ -1,0 +1,22 @@
+server:
+  port: 80
+  tomcat:
+    uri-encoding: UTF-8
+  servlet:
+    context-path: /levi
+
+spring:
+  thymeleaf:
+    cache: false
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/ijadmin?characterEncoding=UTF-8
+    username: root
+    password:
+
+debug: false
+
+

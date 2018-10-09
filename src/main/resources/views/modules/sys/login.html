@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<%
+var path = request.contextPath;
+var ctx = request.scheme + "://" + request.serverName + ":" + request.serverPort + path + "/";
+
+var error = 502;
+%>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide:not(.ng-hide-animate) {
+            display: none !important;
+        }
+
+        ng\:form {
+            display: block;
+        }
+
+        .ng-animate-shim {
+            visibility: hidden;
+        }
+
+        .ng-anchor {
+            position: absolute;
+        }</style>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>用户登录</title>
+    <link href="${ctx}/modules/sys/login/static/swiper.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+          href="${ctx}/modules/sys/login/static/font_uefxj7jl5dxqolxr.css">
+    <link rel="stylesheet" type="text/css" href="${ctx}/modules/sys/login/static/layui.css">
+    <link rel="stylesheet" type="text/css" href="${ctx}/modules/sys/login/static/login.css">
+    <script type="text/javascript">
+        if (localStorage.getItem("scUserName") && localStorage.getItem("scUserId")) {
+            window.location.href = 'sys/index';
+        }
+    </script>
+    <link id="layuicss-laydatecss" rel="stylesheet" href="${ctx}/modules/sys/login/static/laydate.css"/>
+    <link id="layuicss-skinlayercss" rel="stylesheet" href="${ctx}/modules/sys/login/static/layer.css"/>
+    <link id="layuicss-skincodecss" rel="stylesheet" href="${ctx}/modules/sys/login/static/code.css"/>
+</head>
+<body ng-app="login" ng-controller="loginCtrl" class="ng-scope">
+<input type="hidden" value="${error}">
+<div class="largeHeader" id="large-header" style="height: 831px;">
+    <div class="swiper-container swiper-container-horizontal swiper-container-3d swiper-container-flip show"
+         ng-class="{true: &#39;show&#39;}[isShow]">
+        <div class="swiper-wrapper">
+            <!--登录-->
+            <div class="swiper-slide loginBox swiper-no-swiping swiper-slide-active"
+                 style="width: 400px; z-index: 2; transform: translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg);">
+                <div class="imgBox">
+                    <i class="eye leftEye" ng-class="{&#39;eyeClose&#39;:eyeClose}"></i>
+                    <i class="eye rightEye" ng-class="{&#39;eyeClose&#39;:eyeClose}"></i>
+                    <img src="${ctx}/modules/sys/login/static/mty.png">
+                </div>
+                <h3>后台登录</h3>
+                <form class="layui-form ng-pristine ng-invalid ng-invalid-required ng-valid-maxlength ng-valid-usernameused ng-valid-minlength ng-valid-password ng-valid-usernameerror"
+                      ng-submit="submitLoginForm()" name="loginForm">
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <input type="text" ng-model="userName" checkusername=""
+                                   ng-class="{&#39;error&#39;:loginForm.username.$invalid &amp;&amp; loginForm.username.$dirty,&#39;ok&#39;:loginForm.username.$valid}"
+                                   name="username" required="required" lay-verify="required" maxlength="18"
+                                   placeholder="请输入用户名" autocomplete="new-password"
+                                   class="layui-input ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-maxlength ng-valid-usernameused">
+                            <i></i>
+                            <span class="errorTips ng-hide"
+                                  ng-show="loginForm.username.$dirty &amp;&amp; loginForm.username.$invalid">
+  									<span ng-show="loginForm.username.$error.required">请输入用户名</span>
+									<span ng-show="loginForm.username.$error.usernameused"
+                                          class="ng-hide">该用户名未被注册</span>
+									</span>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <input type="password" checkpwd="" ng-model="passWord"
+                                   ng-class="{&#39;error&#39;:loginForm.password.$invalid &amp;&amp; loginForm.password.$dirty,&#39;ok&#39;:loginForm.password.$valid}"
+                                   name="password" ng-minlength="6" ng-focus="focusEye()" ng-blur="blurEye()"
+                                   maxlength="18" required="required" lay-verify="required" placeholder="请输入密码"
+                                   autocomplete="new-password"
+                                   class="layui-input ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength ng-valid-password ng-valid-usernameerror">
+                            <i></i>
+                            <span class="errorTips ng-hide"
+                                  ng-show="loginForm.password.$dirty &amp;&amp; loginForm.password.$invalid">
+									<span ng-show="loginForm.password.$error.required">请输入密码</span>
+									<span ng-show="loginForm.password.$error.password" class="ng-hide">密码格式不正确</span>
+									<span ng-show="loginForm.password.$error.minlength" class="ng-hide">密码最小为6位</span>
+									<span ng-show="loginForm.password.$error.usernameerror"
+                                          class="ng-hide">用户名或密码错误</span>
+									</span>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item loginBtnBox">
+                        <div class="layui-input-block">
+                            <button type="submit" class="layui-btn"
+                                    ng-disabled="loginForm.username.$invalid || loginForm.password.$invalid"
+                                    disabled="disabled">登 录
+                            </button>
+                        </div>
+                    </div>
+                    <a href="javascript:;" class="forgetPwd" ng-click="gotoForgetPwd()">忘记密码？</a>
+                </form>
+                <div class="swiper-slide-shadow-left" style="opacity: 0;"></div>
+                <div class="swiper-slide-shadow-right" style="opacity: 0;"></div>
+            </div>
+            <!--找回密码-->
+            <div class="swiper-slide loginBox swiper-no-swiping swiper-slide-next"
+                 style="width: 400px; z-index: 1; transform: translate3d(-400px, 0px, 0px) rotateX(0deg) rotateY(180deg);">
+                <form class="layui-form ng-pristine ng-invalid ng-invalid-required ng-valid-maxlength ng-invalid-phonenumber ng-valid-phonenumberused ng-invalid-vcode ng-valid-vcodeerror ng-valid-minlength ng-valid-password ng-valid-usernameerror"
+                      ng-submit="submitFindPwd()" name="findForm" style="position: relative;top: 50px;">
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <input type="text" ng-model="phoneNumber" checkphonenumber="" required="required"
+                                   lay-verify="required" name="phonenumber"
+                                   ng-class="{&#39;error&#39;:findForm.phonenumber.$invalid &amp;&amp; findForm.phonenumber.$dirty,&#39;ok&#39;:findForm.phonenumber.$valid}"
+                                   maxlength="11" placeholder="请输入手机号" autocomplete="new-password"
+                                   class="layui-input ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-maxlength ng-invalid-phonenumber ng-valid-phonenumberused">
+                            <i></i>
+                            <span class="errorTips ng-hide"
+                                  ng-show="findForm.phonenumber.$dirty &amp;&amp; findForm.phonenumber.$invalid">
+									<span ng-show="findForm.phonenumber.$error.required">请输入手机号</span>
+									<span ng-show="findForm.phonenumber.$error.phonenumber">手机号格式不正确</span>
+									<span ng-show="findForm.phonenumber.$error.phonenumberused"
+                                          class="ng-hide">该手机号未被注册</span>
+									</span>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <input type="text" maxlength="6" checkvcode="" ng-model="vCode" required="required"
+                                   name="vcode"
+                                   ng-class="{&#39;error&#39;:findForm.vcode.$invalid &amp;&amp; findForm.vcode.$dirty,&#39;ok&#39;:findForm.vcode.$valid}"
+                                   lay-verify="required" placeholder="请输入验证码" autocomplete="new-password"
+                                   class="layui-input ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-maxlength ng-invalid-vcode ng-valid-vcodeerror">
+                            <i class="vCode"></i>
+                            <span class="errorTips ng-hide"
+                                  ng-show="findForm.vcode.$dirty &amp;&amp; findForm.vcode.$invalid">
+									<span ng-show="findForm.vcode.$error.required">请输入手机验证码</span>
+									<span ng-show="findForm.vcode.$error.vcodeerror" class="ng-hide">验证码错误</span>
+									<span ng-show="findForm.vcode.$error.vcode">手机验证码格式不正确</span>
+									</span>
+                            <button type="button" ng-click="sendVcode()"
+                                    class="layui-btn layui-btn-mini getVcode ng-binding"
+                                    ng-disabled="findForm.phonenumber.$invalid || vCodeBtnkey" disabled="disabled">获取验证码
+                            </button>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <input type="password" ng-model="newPwd" checkpwd="" maxlength="18" name="newpwd"
+                                   ng-class="{&#39;error&#39;:findForm.newPwd.$invalid &amp;&amp; findForm.newpwd.$dirty,&#39;ok&#39;:findForm.newpwd.$valid}"
+                                   required="required" ng-minlength="6" lay-verify="required" placeholder="请输入新密码"
+                                   autocomplete="new-password"
+                                   class="layui-input ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength ng-valid-password ng-valid-usernameerror">
+                            <i></i>
+                            <span class="errorTips ng-hide"
+                                  ng-show="findForm.newpwd.$dirty &amp;&amp; findForm.newpwd.$invalid">
+									<span ng-show="findForm.newpwd.$error.required">请输入新密码</span>
+									<span ng-show="findForm.newpwd.$error.minlength" class="ng-hide">新密码最少为6位</span>
+									<span ng-show="findForm.newpwd.$error.password" class="ng-hide">新密码格式不正确</span>
+									</span>
+                        </div>
+                    </div>
+                    <div class="layui-form-item loginBtnBox">
+                        <div class="layui-input-block">
+                            <button type="submit" class="layui-btn"
+                                    ng-disabled="findForm.phonenumber.$invalid || findForm.vcode.$invalid || findForm.newpwd.$invalid"
+                                    disabled="disabled">确 定
+                            </button>
+                        </div>
+                    </div>
+                    <a href="javascript:;" class="forgetPwd" ng-click="gotoLogin()">已有密码，去登录</a>
+                </form>
+                <div class="swiper-slide-shadow-left" style="opacity: 1;"></div>
+                <div class="swiper-slide-shadow-right" style="opacity: 0;"></div>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="demo-canvas" width="1600" height="831"></canvas>
+</div>
+
+<script src="${ctx}/modules/sys/login/static/swiper.min.js"></script>
+<script src="${ctx}/modules/sys/login/static/angular.min.js"></script>
+<script src="${ctx}/modules/sys/login/static/layui.all.js"></script>
+<script src="${ctx}/modules/sys/login/static/TweenLite.min.js"></script>
+<script src="${ctx}/modules/sys/login/static/EasePack.min.js"></script>
+<script src="${ctx}/modules/sys/login/static/rAF.js"></script>
+<script src="${ctx}/modules/sys/login/static/loginCanvasAnimate.js"></script>
+<script src="${ctx}/modules/sys/login/static/login.js"></script>
+
+
+</body>
+</html>
