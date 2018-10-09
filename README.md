@@ -16,14 +16,14 @@
 ## 界面展示
 ### 登陆
 
-![login](doc\img\login.png)
+![login](https://github.com/levin313/IJAdmin/blob/master/doc/img/login.png)
 
 ### 加载
 
 
 
-![loading](doc\img\loading.png)
+![loading](https://github.com/levin313/IJAdmin/blob/master/doc/img/loading.png)
 
 ### 主页
 
-![home](doc\img\home.png)
+![home](https://github.com/levin313/IJAdmin/blob/master/doc/img/home.png)
